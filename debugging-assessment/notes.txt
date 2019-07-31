@@ -22,18 +22,33 @@ Circularity
 
 - app = window.opspark.makeApp({update: update}),
     - eliminate update, update
-
+- <script id="motion-poem">
+            (function(){
+                init(window);
+                window.opspark.makeGame()
+            })();
+            - had to add window (it is shown after adding) and window.opspark.makeGame()
 - 5 draw circle functions called within original function.
 - When updating circle position, not every index value was accessed.
-- if ( circle.x > canvas.width) {
-            circle.x = 0;
-        } else if ( circle.x < 0) {
-           circle.x = canvas.width;
-        } else if ( circle.y > 0) {
-            circle.y = canvas.height;
-        } else if ( circle.y > canvas.heigth) {
-            circle.y = 0;
+- if ( circle.x > canvas.width + circle.radius ) {
+            circle.x = 0 - circle.radius;
+        } else if ( circle.x < canvas.width + circle.radius ) {
+           circle.x = 0 + circle.radius;
+        } if ( circle.y > canvas.height + circle.radius ) {
+            circle.y = 0 - circle.radius;
+        } else if ( circle.y < canvas.heigth + circle.radius ) {
+            circle.y = 0 + circle.radius;
         }
+        - no need for radius. If circle x > greater than width, x = 0;
+        - if circle x < 0, x = canvas width. 
+        - Same principal for circle.y except using 0 and canvas height.
 
 
 Runtime
+
+- In the level data objects in level01, the key value properties ending with semicolons as opposed to commas.
+
+- In the loop through game items, sections between start, stop, and iteration were separated by commas.
+- Also, in the loop through game items, the stop was initially set as game items. Should have been set to levelData.gameitems.
+- Within the loop, game item equaled gameitems[i]; should have been levelData.gameItems[i]
+- Buildings was not defined; Trees was not defined;
