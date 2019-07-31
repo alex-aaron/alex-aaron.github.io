@@ -4,6 +4,9 @@ var background = function (window) {
     window.opspark = window.opspark || {};
     var draw = window.opspark.draw;
     var createjs = window.createjs;
+    var tree;
+    var trees = [];
+    var buildings = [];
     
     /*
      * Create a background view for our game application
@@ -19,6 +22,7 @@ var background = function (window) {
         // container which will be returned
         var background;
         var backgroundBox;
+        var buildings = [];
     
         
         // add objects for display inb ackground
@@ -64,7 +68,7 @@ var background = function (window) {
             // backgroundBox.y = groundY-100;
             // background.addChild(backgroundBox);
             var buildings = [];
-            var trees = [];
+
             
             var building, height;
             for(var i=0;i<7;++i) {

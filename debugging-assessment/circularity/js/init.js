@@ -12,7 +12,7 @@ var init = function (window) {
         window.opspark.makeGame = function () {
             window.opspark.game = {};
             var game = window.opspark.game;
-        }
+    
     
     ////////////////////////////////////////////////////////////////
     // ALL CODE GOES BELOW HERE                                   //
@@ -27,6 +27,7 @@ var init = function (window) {
         physikz.addRandomVelocity(circle, canvas);
         view.addChild(circle);
         circles.push(circle);
+        
     
     }
     
@@ -40,6 +41,7 @@ var init = function (window) {
 
     view.addChild(fps);
     app.addUpdateable(fps);
+    
 
     function checkCircleBounds(circle) {
         // TODO 5 : YOUR CODE STARTS HERE //////////////////////
@@ -81,8 +83,14 @@ var init = function (window) {
     ////////////////////////////////////////////////////////////////////
     // NO CODE BELOW HERE                                             //
     ////////////////////////////////////////////////////////////////////
+    game.circle = circle;
+    game.circles = circles;
+    game.drawCircle = drawCircle;
+    game.update = update;
 
-};
+    app.addUpdateable(window.opspark.game);
+}
+    };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

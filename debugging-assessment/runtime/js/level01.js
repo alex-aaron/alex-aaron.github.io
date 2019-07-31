@@ -15,16 +15,16 @@ var level01 = function (window) {
             number: 1, 
             speed: -3,
             gameItems: [
-                {type: 'sawblade',x:400,y:groundY, scale: 1, loc:'img/sawblade.png'};
-                {type: 'sawblade',x:900,y:groundY};
-                {type: 'sawblade',x:1200,y:groundY - 110};
-                {type: 'sawblade',x:1900,y:groundY};
-                {type: 'sawblade',x:2400,y:groundY - 110};
-                {type: 'elf', x:550, y:groundY-50};
-                {type: 'elf', x:1000, y:groundY-50};
-                {type: 'elf', x:1800, y:groundY-50};
-                {type: 'elf', x:2600, y:groundY-50};
-                {type: 'elf', x:3200, y:groundY-50};
+                {type: 'sawblade',x:400,y:groundY, scale: 1, loc:'img/sawblade.png'},
+                {type: 'sawblade',x:900,y:groundY},
+                {type: 'sawblade',x:1200,y:groundY - 110},
+                {type: 'sawblade',x:1900,y:groundY},
+                {type: 'sawblade',x:2400,y:groundY - 110},
+                {type: 'elf', x:550, y:groundY-50},
+                {type: 'elf', x:1000, y:groundY-50},
+                {type: 'elf', x:1800, y:groundY-50},
+                {type: 'elf', x:2600, y:groundY-50},
+                {type: 'elf', x:3200, y:groundY-50},
             ]
         };
         window.levelData = levelData;
@@ -34,8 +34,8 @@ var level01 = function (window) {
 
         // BEGIN EDITING YOUR CODE HERE
      
-        for (var i = 0, i < gameItems.length, i++) {
-            var gameItem = gameItems[i];
+        for (var i = 0; i < levelData.gameItems.length; i++) {
+            var gameItem = levelData.gameItems[i];
             
             if (gameItem.type === 'sawblade'){
                 createSawblade(gameItem.x, gameItem.y)
@@ -102,4 +102,5 @@ if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = level01;
+}
 }
