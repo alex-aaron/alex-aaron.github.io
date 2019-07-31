@@ -1,0 +1,39 @@
+First Website
+title spelled "tittle"
+
+- Header
+    - Header for Ben Spector was not correct. Should have been <h1>Ben Spector</h1>. Instead there was a paragraph and then header was closed.
+    - After the h1 and paragraph there should have been a </div>, but it was misplaced.
+
+- Div id = "all-contents"
+    - Should have been <div id="content">, instead it was image container
+
+- The image was placed in content as opposed to sidebar.
+
+- Header for interests should have been <h2>
+
+- CSS 
+    - background needs to changed to background-image;
+
+- </div> </div> <div class="content"> 
+    - This was in the content section and it needed to be reworked to make sure divs were closed.
+
+Circularity
+
+- app = window.opspark.makeApp({update: update}),
+    - eliminate update, update
+
+- 5 draw circle functions called within original function.
+- When updating circle position, not every index value was accessed.
+- if ( circle.x > canvas.width) {
+            circle.x = 0;
+        } else if ( circle.x < 0) {
+           circle.x = canvas.width;
+        } else if ( circle.y > 0) {
+            circle.y = canvas.height;
+        } else if ( circle.y > canvas.heigth) {
+            circle.y = 0;
+        }
+
+
+Runtime
